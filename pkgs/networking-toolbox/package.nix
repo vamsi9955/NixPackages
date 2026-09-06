@@ -11,7 +11,7 @@
 
 buildNpmPackage rec {
   pname = "networking-toolbox";
-  version = "latest";
+  version = "unstable-2024-01-01";
 
   src = fetchFromGitHub {
     owner = "lissy93";

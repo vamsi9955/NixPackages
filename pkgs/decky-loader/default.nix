@@ -24,27 +24,34 @@ python3.pkgs.buildPythonPackage rec {
     rm frontend/pnpm-workspace.yaml
   '';
 
+  # pnpmDeps = fetchPnpmDeps {
+  #   fetcherVersion = 3;
+  #   inherit pname version src;
+  #
+  #   # copy here because of sourceRoot
+  #   postPatch = ''
+  #     rm pnpm-workspace.yaml
+  #   '';
+  #
+  #   pnpm = pnpm_9;
+  #   sourceRoot = "${src.name}/frontend";
+  #   hash = "sha256-WgKycKbaZv9lovoo0IaCuV41qS4zUqm4vZxsMQBUdNk=";
+  # };
+  
   pnpmDeps = fetchPnpmDeps {
-    fetcherVersion = 3;
     inherit pname version src;
-
-    # copy here because of sourceRoot
     postPatch = ''
       rm pnpm-workspace.yaml
     '';
-
-    pnpm = pnpm_9;
-    sourceRoot = "${src.name}/frontend";
     hash = "sha256-WgKycKbaZv9lovoo0IaCuV41qS4zUqm4vZxsMQBUdNk=";
   };
-
   pyproject = true;
 
   pnpmRoot = "frontend";
 
   nativeBuildInputs = [
     nodejs
-    pnpm_9
+    pnpm
     pnpmConfigHook
   ];
 

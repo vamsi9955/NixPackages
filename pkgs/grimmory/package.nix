@@ -18,7 +18,7 @@ stdenvNoCC.mkDerivation rec {
 
   # Download the official pre-compiled JAR
   src = fetchurl {
-      url = "https://github.com/grimmory-tools/grimmory/releases/download/v${version}/grimmory-v${version}.jar";
+      url = "https://github.com/grimmory-tools/grimmory/releases/download/v${version}/grimmory-${version}.jar";
       hash = "sha256-TOxCcQK5ncBf7BT41rn7lI0lkbahv31T3Per3ml6N9M=";
     };
 

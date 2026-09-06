@@ -3,7 +3,7 @@
 
 stdenv.mkDerivation rec {
   pname = "mazanoke";
-  version = "latest"; # Update to specific tag if desired
+  version = "unstable-2024-01-01";
 
   src = fetchFromGitHub {
     owner = "civilblur";

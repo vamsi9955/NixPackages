@@ -10,4 +10,5 @@ final: prev: {
   omni-tools = prev.callPackage ./omni-tools/package.nix { };
   mazanoke = prev.callPackage ./mazanoke/package.nix { };
   yamtrack = prev.callPackage ./yamtrack/default.nix { };
+  ab-download-manager = prev.callPackage ./ab-download-manager/package.nix { };
 }

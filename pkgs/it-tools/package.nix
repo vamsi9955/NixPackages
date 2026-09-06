@@ -11,7 +11,7 @@
 
 stdenv.mkDerivation rec {
   pname = "it-tools";
-  version = "latest";
+  version = "unstable-2024-01-01";
 
   src = fetchFromGitHub {
     owner = "CorentinTh";
