@@ -11,12 +11,12 @@
 
 stdenv.mkDerivation rec {
   pname = "it-tools";
-  version = "unstable-2024-01-01";
+  version = "2024.10.22-7ca5933-unstable-2026-02-12";
 
   src = fetchFromGitHub {
     owner = "CorentinTh";
     repo = "it-tools";
-    rev = "main";
+    rev = "d505845f918e946ec300af7b36efc107e2f66e9e";
     # 1st Hash: The source code hash
     hash = "sha256-dWVRiLbJ1X4yHT5yRcq+KaHmjjtc24yQg0jQvWTPNwU="; 
   };
