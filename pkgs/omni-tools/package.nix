@@ -3,16 +3,16 @@
 
 buildNpmPackage rec {
   pname = "omni-tools";
-  version = "unstable-2024-01-01";
+  version = "0.6.0-unstable-2026-08-17";
 
   src = fetchFromGitHub {
     owner = "iib0011";
     repo = "omni-tools";
-    rev = "main";
-    hash = "sha256-4FLerVHkwlTPqmpXvxr9A4Bkk9U2SGMGoqwRulXXHQ4=";
+    rev = "89a50e3e3d221b4291cce7cbf91db6f4b0790679";
+    hash = "sha256-EffnnFkiUc9e1EfKHPMdxR/qXzu5Clmu2rbKPgU9mtI=";
   };
 
-  npmDepsHash = "sha256-dIHy1k8id5JmxmCM/x4GiQciFPU0/i+z2snOOYRVq68=";
+  npmDepsHash = "sha256-DoWNUDmpaJAUVHRn3GnEI63QaEb8Te2WwYwJerFN+Ak=";
 
   # By default, buildNpmPackage automatically runs 'npm run build' for us.
   
