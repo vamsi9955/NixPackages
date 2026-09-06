@@ -31,7 +31,7 @@
           omni-tools = pkgs.callPackage ./pkgs/omni-tools/package.nix { };
           mazanoke = pkgs.callPackage ./pkgs/mazanoke/package.nix { };
           yamtrack = pkgs.callPackage ./pkgs/yamtrack/default.nix { };
-          ab-download-manager = prev.callPackage ./ab-download-manager/package.nix { };
+          ab-download-manager = pkgs.callPackage ./pkgs/ab-download-manager/package.nix { };
         }
       );
 

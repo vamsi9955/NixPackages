@@ -91,7 +91,7 @@ jobs:
           # ====================================================================
           declare -A BINARY_REPOS=(
             ["grimmory"]="grimmory-tools/grimmory|.jar$"
-            ["ab-download-manager"]="amir1376/ab-download-manager|.tar.gz$"
+            ["ab-download-manager"]="amir1376/ab-download-manager|linux_x64\.tar\.gz$"
           )
 
           for pkg in "${!BINARY_REPOS[@]}"; do

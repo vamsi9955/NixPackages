@@ -22,9 +22,9 @@ stdenv.mkDerivation rec {
   };
 
   pnpmDeps = fetchPnpmDeps {
-    inherit pname version src;
-    # 2nd Hash: The PNPM dependencies cache
-    hash = "sha256-+/q9cu8WG8qzMBbocfnrcsHI2Kd1ztO7mXk3xvwQEfs=";
+    inherit pname version src pnpm;
+    fetcherVersion = 4;
+    hash = "sha256-ju8YO0IHIGJtCi5TnxvfLUXcTqKWnTBKAGFBhzQJTok=";
   };
 
   nativeBuildInputs = [
