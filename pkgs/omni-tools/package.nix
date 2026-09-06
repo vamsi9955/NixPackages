@@ -1,5 +1,5 @@
 # pkgs/omni-tools/package.nix
-{ lib, buildNpmPackage, fetchFromGitHub }:
+{ lib, buildNpmPackage, fetchFromGitHub, git }:
 
 buildNpmPackage rec {
   pname = "omni-tools";
@@ -13,7 +13,8 @@ buildNpmPackage rec {
   };
 
   npmDepsHash = "sha256-DoWNUDmpaJAUVHRn3GnEI63QaEb8Te2WwYwJerFN+Ak=";
-
+  
+  nativeBuildInputs = [ git ];
   # By default, buildNpmPackage automatically runs 'npm run build' for us.
   
   installPhase = ''
