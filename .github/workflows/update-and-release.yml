@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   update-and-release:
@@ -149,6 +150,11 @@ jobs:
 
             gh release create "$NEXT_TAG" --title "Release $NEXT_TAG" --notes-file "$NOTES_FILE"
             echo "🎉 Release $NEXT_TAG created successfully!"
+            
+            # ---> Explicitly trigger the Cachix build workflow!
+            echo "Triggering Cachix Build Workflow..."
+            gh workflow run build-and-cache.yml
+
           else
             echo "All packages are up to date."
           fi
