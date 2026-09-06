@@ -10,17 +10,17 @@
 }:
 
 let
-  version = "1.5.11"; # Latest stable release
+  version = "1.5.12"; # Latest stable release
 
   src = fetchFromGitHub {
     owner = "jordan-dalby";
     repo = "ByteStash";
     rev = "v${version}";
-    hash = "sha256-aRVKqfFELQuPkQrABJzIEdTmRSXgQf9z/zGS2W8akiQ="; 
+    hash = "sha256-9MlTX+e0sKe7JS7GRDiwV1Tx8SUDXtWQjtFjiZzxdLA="; 
   };
 
   # The exact hash you successfully generated!
-  sharedNpmDepsHash = "sha256-8VgtXM+0yFsFDAY6hzECkCGov77wDnAmB+I9V9JYEyQ="; 
+  sharedNpmDepsHash = "sha256-IKwdFFuuJom/tqq36PlhkCaRO647+HKXIcRRCBZukMc="; 
 
   # ---------------------------------------------------------
   # 1. Build the React Frontend
