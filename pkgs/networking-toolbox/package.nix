@@ -11,12 +11,12 @@
 
 buildNpmPackage rec {
   pname = "networking-toolbox";
-  version = "unstable-2024-01-01";
+  version = "1.6.0-unstable-2026-04-05";
 
   src = fetchFromGitHub {
     owner = "lissy93";
     repo = "networking-toolbox";
-    rev = "main";
+    rev = "776805f692c20e59fe5de1942e999ccf91944f54";
     hash = "sha256-7c96qlv+5j8rk4U8hiPYKy0sdm2tsYx+XH158jU0GqQ="; 
   };
 
