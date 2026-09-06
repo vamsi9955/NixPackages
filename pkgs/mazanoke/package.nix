@@ -3,12 +3,12 @@
 
 stdenv.mkDerivation rec {
   pname = "mazanoke";
-  version = "unstable-2024-01-01";
+  version = "1.1.6-unstable-2026-05-10";
 
   src = fetchFromGitHub {
     owner = "civilblur";
     repo = "mazanoke";
-    rev = "main";
+    rev = "68d6a24429fd58feec2808a3f5ee0062fef744d6";
     hash = "sha256-b9tEK0fnrTIOG16jxPbAI+25G4TF3P8SKpVkb99Unqw=";
   };
 
