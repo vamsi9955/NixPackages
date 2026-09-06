@@ -16,11 +16,10 @@ stdenvNoCC.mkDerivation rec {
   pname = "grimmory";
   version = "3.2.0";
 
-  # Download the official pre-compiled JAR
   src = fetchurl {
-      url = "https://github.com/grimmory-tools/grimmory/releases/download/v${version}/grimmory-${version}.jar";
-      hash = "sha256-TOxCcQK5ncBf7BT41rn7lI0lkbahv31T3Per3ml6N9M=";
-    };
+    url = "https://github.com/grimmory-tools/grimmory/releases/download/v3.2.0/grimmory-v3.2.0.jar";
+    hash = "sha256-TOxCcQK5ncBf7BT41rn7lI0lkbahv31T3Per3ml6N9M=";
+  };
 
   nativeBuildInputs = [
     makeWrapper

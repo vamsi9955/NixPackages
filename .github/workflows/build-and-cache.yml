@@ -15,12 +15,12 @@ jobs:
           - bytestash
           - calibre-web-automated
           - decky-loader
-          - bibata-hyprcursor
           - it-tools
           - networking-toolbox
           - omni-tools
           - mazanoke
           - yamtrack
+          - ab-download-manager
       fail-fast: false # If one package fails, keep building the others!
     
     runs-on: ubuntu-latest

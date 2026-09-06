@@ -25,9 +25,6 @@ stdenv.mkDerivation rec {
     inherit pname version src;
     # 2nd Hash: The PNPM dependencies cache
     hash = "sha256-+/q9cu8WG8qzMBbocfnrcsHI2Kd1ztO7mXk3xvwQEfs=";
-    
-    # NEW: Tell Nix which lockfile algorithm to use
-    fetcherVersion = 3; 
   };
 
   nativeBuildInputs = [
