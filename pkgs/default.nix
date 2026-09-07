@@ -11,4 +11,5 @@ final: prev: {
   mazanoke = prev.callPackage ./mazanoke/package.nix { };
   yamtrack = prev.callPackage ./yamtrack/default.nix { };
   ab-download-manager = prev.callPackage ./ab-download-manager/package.nix { };
+  komf = prev.callPackage ./komf/package.nix { };
 }

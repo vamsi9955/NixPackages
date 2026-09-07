@@ -32,6 +32,7 @@
           mazanoke = pkgs.callPackage ./pkgs/mazanoke/package.nix { };
           yamtrack = pkgs.callPackage ./pkgs/yamtrack/default.nix { };
           ab-download-manager = pkgs.callPackage ./pkgs/ab-download-manager/package.nix { };
+          komf = pkgs.callPackage ./pkgs/komf/package.nix { };
         }
       );
 
