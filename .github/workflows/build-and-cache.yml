@@ -11,13 +11,14 @@ jobs:
         package: 
           - grimmory
           - bytestash
-          - calibre-web-automated
+          - bookorbit
           - decky-loader
           - it-tools
           - networking-toolbox
           - omni-tools
           - mazanoke
           - yamtrack
+          - yamtrack-git
           - ab-download-manager
       fail-fast: false # If one package fails, keep building the others!
     

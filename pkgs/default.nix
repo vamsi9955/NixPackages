@@ -10,7 +10,7 @@ final: prev: {
   omni-tools = prev.callPackage ./omni-tools/package.nix { };
   mazanoke = prev.callPackage ./mazanoke/package.nix { };
   yamtrack = prev.callPackage ./yamtrack/default.nix { };
-  yamtrack-git = prev.callPackage ./yamtrack/git.nix { };
+  yamtrack-git = prev.callPackage ./yamtrack/yamtrack-git.nix { };
   ab-download-manager = prev.callPackage ./ab-download-manager/package.nix { };
   komf = prev.callPackage ./komf/package.nix { };
 }
