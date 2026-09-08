@@ -16,17 +16,14 @@ buildNpmPackage rec {
   
   nativeBuildInputs = [ git ];
   
- postUnpack = ''
-    cd $sourceRoot
-    
-    # Initialize a minimal git repository so git commands don't fail
+  preBuild = ''
+    # Initialize git repo in the build directory before npm build runs
+    cd "$sourceRoot"
     git init
-    git config user.email "nix-builder@local"
+    git config user.email "nix@localhost"
     git config user.name "Nix Builder"
     git add .
-    git commit -m "source" --no-verify 2>/dev/null || true
-    
-    cd -
+    git commit -m "Initial commit" --no-verify 2>/dev/null || true
   '';
   
   installPhase = ''
