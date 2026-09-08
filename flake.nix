@@ -44,7 +44,7 @@
           imports = [
             ./pkgs/grimmory/module.nix
             ./pkgs/bytestash/module.nix
-            ./pkgs/bookorbit/module.nix
+            # ./pkgs/bookorbit/module.nix
             ./pkgs/it-tools/module.nix
           ];
         };
