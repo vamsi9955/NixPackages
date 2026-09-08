@@ -1,5 +1,4 @@
-# pkgs/omni-tools/package.nix
-{ lib, buildNpmPackage, fetchFromGitHub, git }:
+{ lib, buildNpmPackage, fetchFromGitHub, writeShellScriptBin }:
 
 buildNpmPackage rec {
   pname = "omni-tools";
@@ -14,22 +13,18 @@ buildNpmPackage rec {
 
   npmDepsHash = "sha256-DoWNUDmpaJAUVHRn3GnEI63QaEb8Te2WwYwJerFN+Ak=";
   
-  nativeBuildInputs = [ git ];
-  
-  preBuild = ''
-    # Initialize git repo in the build directory before npm build runs
-    cd "$sourceRoot"
-    git init
-    git config user.email "nix@localhost"
-    git config user.name "Nix Builder"
-    git add .
-    git commit -m "Initial commit" --no-verify 2>/dev/null || true
-  '';
+  nativeBuildInputs = [ 
+    # Create a fake 'git' command that completely bypasses the sandbox limitations.
+    # It automatically intercepts Vite's request and echoes the first 7 characters 
+    # of the GitHub revision hash we defined above.
+    (writeShellScriptBin "git" ''
+      echo "${builtins.substring 0 7 src.rev}"
+    '')
+  ];
   
   installPhase = ''
     runHook preInstall
     
-    # We grab the static output from the 'dist' folder and discard the rest
     mkdir -p $out/share/omni-tools
     cp -r dist/* $out/share/omni-tools/
     
