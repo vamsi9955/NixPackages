@@ -1,16 +1,7 @@
+
 { pkgs, python3, fetchFromGitHub }:
 
 let
-  version = "0.26.3";
-
-  # Fetches the actual python code from GitHub
-  src = fetchFromGitHub {
-    owner = "FuzzyGrim";
-    repo = "Yamtrack";
-    rev = "v${version}";
-    hash = "sha256-laDjja0JOWByZCl6/oRonmSLK3i56gjsrKleQA5b9ec="; 
-  };
-
   python = python3;
   
   django-health-check = python.pkgs.buildPythonPackage {
@@ -58,13 +49,13 @@ let
     doCheck = false;
   };
 
-  requests-ratelimiter = python.pkgs.buildPythonPackage {
+requests-ratelimiter = python.pkgs.buildPythonPackage {
     pname = "requests-ratelimiter";
-    version = "0.10.0";
+    version = "0.10.0"; # The actual latest version on PyPI
     src = pkgs.fetchPypi {
-      pname = "requests_ratelimiter";
+      pname = "requests_ratelimiter"; # The 0.10.0 source tarball uses an underscore
       version = "0.10.0";
-      hash = "sha256-nBp412RsqlzPIRpsNBq9FtMpviyMNQRKQYqp2nwOejM=";
+      hash = "sha256-nBp412RsqlzPIRpsNBq9FtMpviyMNQRKQYqp2nwOejM="; # Nix will fail and give you the correct hash for 0.10.0
     };
     pyproject = true;
     build-system = [ python.pkgs.hatchling ];
@@ -85,9 +76,26 @@ let
   ];
 
 in python.pkgs.buildPythonPackage {
-  pname = "yamtrack";
-  inherit version src;
+  pname = "yamtrack-git";
+  # version = "master"; 
+  #
+  # src = fetchFromGitHub {
+  #   owner = "FuzzyGrim";
+  #   repo = "Yamtrack";
+  #   rev = "master";
+  #   hash = "sha256-qvd+lS6SbN2Ccz1YtlvM9NYwLqLcm3d32tNESRRbRqQ=";
+  # };
+
+  version = "main";
   
+  # Fetches the actual python code from GitHub
+  src = fetchFromGitHub {
+    owner = "FuzzyGrim";
+    repo = "Yamtrack";
+    rev = "master";
+    hash = "sha256-qvd+lS6SbN2Ccz1YtlvM9NYwLqLcm3d32tNESRRbRqQ="; 
+  };
+
   pyproject = false;
 
   postPatch = ''
