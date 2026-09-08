@@ -3,6 +3,7 @@ final: prev: {
   grimmory = prev.callPackage ./grimmory/package.nix { };
   bytestash = prev.callPackage ./bytestash/package.nix { };
   calibre-web-automated = prev.callPackage ./calibre-web-automated/package.nix { };
+  # bookorbit = prev.callPackage ./bookorbit/package.nix { };
   decky-loader = prev.callPackage ./decky-loader/default.nix { };
   bibata-hyprcursor = prev.callPackage ./bibata-hyprcursor/default.nix { };
   it-tools = prev.callPackage ./it-tools/package.nix { };

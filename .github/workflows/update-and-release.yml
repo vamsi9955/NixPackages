@@ -49,7 +49,18 @@ jobs:
             echo "🔄 Checking Tagged Repo: $pkg"
 
             old_version=$(nix eval --raw .#packages.x86_64-linux.$pkg.version 2>/dev/null || echo "unknown")
-            nix-shell -p nix-update --run "nix-update --flake $pkg --commit || true"
+            
+            # ---> NEW: Forcefully grab the official stable release tag, bypassing pre-releases
+            LATEST_TAG=$(gh api "repos/$upstream/releases/latest" 2>/dev/null | jq -r '.tag_name // empty' | sed 's/^v//')
+
+            if [ -n "$LATEST_TAG" ]; then
+                echo "Targeting official stable release: $LATEST_TAG"
+                nix-shell -p nix-update --run "nix-update --flake --version $LATEST_TAG $pkg --commit || true"
+            else
+                echo "No strict stable release found, falling back to auto-discovery..."
+                nix-shell -p nix-update --run "nix-update --flake $pkg --commit || true"
+            fi
+            
             new_version=$(nix eval --raw .#packages.x86_64-linux.$pkg.version 2>/dev/null || echo "unknown")
 
             if [ "$old_version" != "$new_version" ] && [ "$new_version" != "unknown" ]; then
