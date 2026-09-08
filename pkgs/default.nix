@@ -2,8 +2,7 @@
 final: prev: {
   grimmory = prev.callPackage ./grimmory/package.nix { };
   bytestash = prev.callPackage ./bytestash/package.nix { };
-  calibre-web-automated = prev.callPackage ./calibre-web-automated/package.nix { };
-  # bookorbit = prev.callPackage ./bookorbit/package.nix { };
+  bookorbit = prev.callPackage ./bookorbit/package.nix { };
   decky-loader = prev.callPackage ./decky-loader/default.nix { };
   bibata-hyprcursor = prev.callPackage ./bibata-hyprcursor/default.nix { };
   it-tools = prev.callPackage ./it-tools/package.nix { };
@@ -11,6 +10,7 @@ final: prev: {
   omni-tools = prev.callPackage ./omni-tools/package.nix { };
   mazanoke = prev.callPackage ./mazanoke/package.nix { };
   yamtrack = prev.callPackage ./yamtrack/default.nix { };
+  yamtrack-git = prev.callPackage ./yamtrack/git.nix { };
   ab-download-manager = prev.callPackage ./ab-download-manager/package.nix { };
   komf = prev.callPackage ./komf/package.nix { };
 }

@@ -23,7 +23,7 @@
         in {
           grimmory = pkgs.callPackage ./pkgs/grimmory/package.nix { };
           bytestash = pkgs.callPackage ./pkgs/bytestash/package.nix { };
-          calibre-web-automated = pkgs.callPackage ./pkgs/calibre-web-automated/package.nix { };
+          bookorbit = pkgs.callPackage ./pkgs/bookorbit/package.nix { };
           decky-loader = pkgs.callPackage ./pkgs/decky-loader/default.nix { };
           bibata-hyprcursor = pkgs.callPackage ./pkgs/bibata-hyprcursor/default.nix { };
           it-tools = pkgs.callPackage ./pkgs/it-tools/package.nix { };
@@ -31,6 +31,7 @@
           omni-tools = pkgs.callPackage ./pkgs/omni-tools/package.nix { };
           mazanoke = pkgs.callPackage ./pkgs/mazanoke/package.nix { };
           yamtrack = pkgs.callPackage ./pkgs/yamtrack/default.nix { };
+          yamtrack-git = pkgs.callPackage ./pkgs/yamtrack/git.nix { };
           ab-download-manager = pkgs.callPackage ./pkgs/ab-download-manager/package.nix { };
           komf = pkgs.callPackage ./pkgs/komf/package.nix { };
         }
@@ -43,13 +44,13 @@
           imports = [
             ./pkgs/grimmory/module.nix
             ./pkgs/bytestash/module.nix
-            ./pkgs/calibre-web-automated/module.nix
+            ./pkgs/bookorbit/module.nix
             ./pkgs/it-tools/module.nix
           ];
         };
         grimmory = import ./pkgs/grimmory/module.nix;
         bytestash = import ./pkgs/bytestash/module.nix;
-        calibre-web-automated = import ./pkgs/calibre-web-automated/module.nix;
+        bookorbit = import ./pkgs/bookorbit/module.nix;
         it-tools = import ./pkgs/it-tools/module.nix;
       };
     };
