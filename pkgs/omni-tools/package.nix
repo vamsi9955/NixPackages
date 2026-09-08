@@ -16,8 +16,17 @@ buildNpmPackage rec {
   
   nativeBuildInputs = [ git ];
   
-  postUnpack = ''
-    sed -i 's/git rev-parse --short HEAD/echo "unknown"/' $sourceRoot/vite.config.ts
+ postUnpack = ''
+    cd $sourceRoot
+    
+    # Initialize a minimal git repository so git commands don't fail
+    git init
+    git config user.email "nix-builder@local"
+    git config user.name "Nix Builder"
+    git add .
+    git commit -m "source" --no-verify 2>/dev/null || true
+    
+    cd -
   '';
   
   installPhase = ''
