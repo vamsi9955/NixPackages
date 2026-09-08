@@ -1,8 +1,9 @@
-{ lib, buildNpmPackage, fetchFromGitHub, writeShellScriptBin }:
+{ lib, buildNpmPackage, fetchFromGitHub }:
 
 buildNpmPackage rec {
   pname = "omni-tools";
-  version = "0.6.0-unstable-2026-08-17";
+  # Make sure this version string matches what nix-update expects!
+  version = "0.6.0-unstable-2026-08-17"; 
 
   src = fetchFromGitHub {
     owner = "iib0011";
@@ -13,14 +14,12 @@ buildNpmPackage rec {
 
   npmDepsHash = "sha256-DoWNUDmpaJAUVHRn3GnEI63QaEb8Te2WwYwJerFN+Ak=";
   
-  nativeBuildInputs = [ 
-    # Create a fake 'git' command that completely bypasses the sandbox limitations.
-    # It automatically intercepts Vite's request and echoes the first 7 characters 
-    # of the GitHub revision hash we defined above.
-    (writeShellScriptBin "git" ''
-      echo "${builtins.substring 0 7 src.rev}"
-    '')
-  ];
+  # This phase safely edits the file in-place before the build starts.
+  # When Vite calls execSync(), it will run our echo command instead of git.
+  postPatch = ''
+    substituteInPlace vite.config.ts \
+      --replace-warn "git rev-parse --short HEAD" "echo ${builtins.substring 0 7 src.rev}"
+  '';
   
   installPhase = ''
     runHook preInstall
