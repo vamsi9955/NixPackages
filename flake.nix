@@ -23,7 +23,7 @@
         in {
           grimmory = pkgs.callPackage ./pkgs/grimmory/package.nix { };
           bytestash = pkgs.callPackage ./pkgs/bytestash/package.nix { };
-          bookorbit = pkgs.callPackage ./pkgs/bookorbit/package.nix { };
+          # bookorbit = pkgs.callPackage ./pkgs/bookorbit/package.nix { };
           decky-loader = pkgs.callPackage ./pkgs/decky-loader/default.nix { };
           bibata-hyprcursor = pkgs.callPackage ./pkgs/bibata-hyprcursor/default.nix { };
           it-tools = pkgs.callPackage ./pkgs/it-tools/package.nix { };

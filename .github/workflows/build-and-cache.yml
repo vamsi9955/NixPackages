@@ -11,7 +11,7 @@ jobs:
         package: 
           - grimmory
           - bytestash
-          - bookorbit
+          # - bookorbit
           - decky-loader
           - it-tools
           - networking-toolbox
