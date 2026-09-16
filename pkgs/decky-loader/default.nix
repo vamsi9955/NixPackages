@@ -10,13 +10,13 @@
 }:
 python3.pkgs.buildPythonPackage rec {
   pname = "decky-loader";
-  version = "3.2.8";
+  version = "3.2.9";
 
   src = fetchFromGitHub {
     owner = "SteamDeckHomebrew";
     repo = "decky-loader";
     rev = "v${version}";
-    hash = "sha256-Y2dMTKLXtZAyXuWhnS/jbqjCYyWvSChslt/YxIBbWXw=";
+    hash = "sha256-XhW+bbsEhWnD/1c3QVHAQz6AAo824b/hbZ1t/VZE1po=";
   };
 
   # confuses our pnpm tooling
@@ -31,7 +31,7 @@ pnpmDeps = fetchPnpmDeps {
       rm pnpm-workspace.yaml
     '';
     sourceRoot = "${src.name}/frontend";
-    hash = "sha256-OHimg85kcjk+Tq1Yv8TA9CfPDVzxdgPpzTi2mxyPs4s=";
+    hash = "sha256-w4UFsNqy8fYjpQ5jgPRQ4bfVZJb3aitYUsnf4PP8Itc=";
   };
   pyproject = true;
 
