@@ -14,11 +14,11 @@
 
 stdenvNoCC.mkDerivation rec {
   pname = "grimmory";
-  version = "3.4.0";
+  version = "3.4.1";
 
   src = fetchurl {
-    url = "https://github.com/grimmory-tools/grimmory/releases/download/v3.4.0/grimmory.jar";
-    hash = "sha256-Z5wXiGGRRhWE+C8SgWq9VMywL5MmwguWrY+sSdEANQY=";
+    url = "https://github.com/grimmory-tools/grimmory/releases/download/v3.4.1/grimmory.jar";
+    hash = "sha256-/GrNmDH9gaxiUltwZA2Svi5YJbntQ+APGuXyJE4nN5Q=";
   };
 
   nativeBuildInputs = [
