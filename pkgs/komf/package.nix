@@ -8,11 +8,11 @@
 
 stdenvNoCC.mkDerivation rec {
   pname = "komf";
-  version = "2.0.1";
+  version = "2.1.0";
 
   src = fetchurl {
-    url = "https://github.com/Snd-R/komf/releases/download/2.0.1/komf-2.0.1.jar";
-    hash = "sha256-9eAaBpOM8eE6Tp2CEdsFaeieCSVgctG731sEKR6AnLk=";
+    url = "https://github.com/Snd-R/komf/releases/download/2.1.0/komf-2.1.0.jar";
+    hash = "sha256-J2AitFV42TPoBHvmO/3UEjyAl53tiy8JhlB/2vCEAJM=";
   };
 
   nativeBuildInputs = [ makeWrapper ];
