@@ -11,16 +11,16 @@
 
 buildNpmPackage rec {
   pname = "networking-toolbox";
-  version = "1.6.0-unstable-2026-04-05";
+  version = "1.6.0-unstable-2026-09-30";
 
   src = fetchFromGitHub {
     owner = "lissy93";
     repo = "networking-toolbox";
-    rev = "776805f692c20e59fe5de1942e999ccf91944f54";
-    hash = "sha256-7c96qlv+5j8rk4U8hiPYKy0sdm2tsYx+XH158jU0GqQ="; 
+    rev = "4938828c81d4aea4a944390dbb303553cc7bd625";
+    hash = "sha256-fCiQ8vyU73YQe37LRPJEFGIvT7w9N0SFakz4iFdvYGE="; 
   };
 
-  npmDepsHash = "sha256-Ua0vJIobjmvm6L/r2RBvEZd2l6kH6mg3JBzRwGhmbB4=";
+  npmDepsHash = "sha256-GAA5UuoxLXXKnj4+0MPNGojwKXK9rjfutCtb3RCfal8=";
 
   DEPLOY_ENV = "node";
 
