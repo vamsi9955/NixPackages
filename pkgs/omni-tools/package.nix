@@ -8,8 +8,8 @@ buildNpmPackage rec {
   src = fetchFromGitHub {
     owner = "iib0011";
     repo = "omni-tools";
-    rev = "728effe2b7b94ed78406756588de4e546153087f";
-    hash = "sha256-8Rz2v9iy7p40MkRSC4e4mDJ6P49h1tzaIZ0vDNz40TU=";
+    rev = "3bbca2fdc076d972ff21144e58dd6ef0480655f0";
+    hash = "sha256-fjs+QTNr1+nyM04Zb0e4tLcJMptSljCbc2nvLCJPxNo=";
   };
 
   npmDepsHash = "sha256-DoWNUDmpaJAUVHRn3GnEI63QaEb8Te2WwYwJerFN+Ak=";
