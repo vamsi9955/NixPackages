@@ -3,16 +3,16 @@
 buildNpmPackage rec {
   pname = "omni-tools";
   # Make sure this version string matches what nix-update expects!
-  version = "0.6.0-unstable-2026-10-13"; 
+  version = "0.7.0-unstable-2026-10-20"; 
 
   src = fetchFromGitHub {
     owner = "iib0011";
     repo = "omni-tools";
-    rev = "cf41a30dda37e1f33deeeb03f959295c249c2beb";
-    hash = "sha256-ncxMb5VpXASRQifaN34JVo9Th6TrICOXCLOoJb/WLSY=";
+    rev = "dda3a240772459035eb38b14c5c7d94e81626116";
+    hash = "sha256-Qr0Dq0uwD+K9KqlMKVKgEbzMN76WEnM4NcRBY9/af4o=";
   };
 
-  npmDepsHash = "sha256-DoWNUDmpaJAUVHRn3GnEI63QaEb8Te2WwYwJerFN+Ak=";
+  npmDepsHash = "sha256-UsgxAAvzo8eN9O7X1F7aooLlFP80ZSAdk7xawnXHgto=";
   
   # This phase safely edits the file in-place before the build starts.
   # When Vite calls execSync(), it will run our echo command instead of git.
