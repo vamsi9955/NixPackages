@@ -65,8 +65,15 @@ pnpmDeps = fetchPnpmDeps {
     watchdog
   ];
 
+  # makeWrapperArgs = [
+  #   "--prefix PATH : ${lib.makeBinPath [ coreutils psmisc ]}"
+  # ];
+
   makeWrapperArgs = [
-    "--prefix PATH : ${lib.makeBinPath [ coreutils psmisc ]}"
+    "--prefix"
+    "PATH"
+    ":"
+    (lib.makeBinPath [ coreutils psmisc ])
   ];
 
   pythonRelaxDeps = [
