@@ -3,13 +3,13 @@
 buildNpmPackage rec {
   pname = "omni-tools";
   # Make sure this version string matches what nix-update expects!
-  version = "0.7.0-unstable-2026-10-23"; 
+  version = "0.7.0-unstable-2026-10-24"; 
 
   src = fetchFromGitHub {
     owner = "iib0011";
     repo = "omni-tools";
-    rev = "60bc64f5a6974f3c802c5ec06cb3cf7f824485e1";
-    hash = "sha256-W3eN4onIU5frrl4d+FVB8MfAtM6TplzhUi5FDtBzJGM=";
+    rev = "9244e02923d99cde143ddd5b8d761d9ed0997da4";
+    hash = "sha256-XQ4MwFAU5gNjQ6b1o7iQnReyAl7uHjDRgs1P3w6gzxc=";
   };
 
   npmDepsHash = "sha256-TPCrMwMGEJB3AquXyB+Ypl2dpgSH8QXK+UX+HSd9BkY=";
