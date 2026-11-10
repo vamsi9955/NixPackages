@@ -10,13 +10,13 @@
 }:
 
 let
-  version = "1.6.1"; # Latest stable release
+  version = "1.6.2"; # Latest stable release
 
   src = fetchFromGitHub {
     owner = "jordan-dalby";
     repo = "ByteStash";
     rev = "v${version}";
-    hash = "sha256-idIJANuSAjaVDainjFSCH7TlQA4m3xzWbYjLWRJCwVM="; 
+    hash = "sha256-9xEVcjp7jCHtSWmLsGV/aCaoZMtesR5BpY3UlrmsJVw="; 
   };
 
   # The exact hash you successfully generated!
